@@ -24,7 +24,7 @@ USE `weather_station` ;
 DROP TABLE IF EXISTS `weather_station`.`station` ;
 
 CREATE TABLE IF NOT EXISTS `weather_station`.`station` (
-  `idstation` INT NOT NULL,
+  `idstation` INT NOT NULL AUTO_INCREMENT,
   `installation_date` DATE NOT NULL,
   `latitude` FLOAT NOT NULL,
   `longtitude` FLOAT NOT NULL,
