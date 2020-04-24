@@ -60,7 +60,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `weather_station`.`service` ;
 
 CREATE TABLE IF NOT EXISTS `weather_station`.`service` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `date` DATE NOT NULL,
   `description` VARCHAR(45) NOT NULL,
   `station_idstation` INT NOT NULL,
@@ -74,7 +74,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `weather_station`.`interval` ;
 
 CREATE TABLE IF NOT EXISTS `weather_station`.`interval` (
-  `idinterval` INT NOT NULL,
+  `idinterval` INT NOT NULL AUTO_INCREMENT,
   `setting` INT NULL,
   `general` INT NULL,
   PRIMARY KEY (`idinterval`))
@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `weather_station`.`manufacturer` ;
 
 CREATE TABLE IF NOT EXISTS `weather_station`.`manufacturer` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `country` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
