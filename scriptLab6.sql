@@ -24,7 +24,7 @@ USE `weather_station` ;
 DROP TABLE IF EXISTS `weather_station`.`station` ;
 
 CREATE TABLE IF NOT EXISTS `weather_station`.`station` (
-  `idstation` INT NULL,
+  `idstation` INT NOT NULL,
   `installation_date` DATE NOT NULL,
   `latitude` FLOAT NOT NULL,
   `longtitude` FLOAT NOT NULL,
@@ -103,21 +103,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `weather_station`;
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (1, '14-11-2009', 49.4656, 24.0455, 340, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (2, '25-12-2015', 48.4523, 32.5500, 100, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (3, '01-06-2019', 52.8570, 20.8900, 120, 'Poland ', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (4, '25-10-2016', 52.4560, 28.0000, 345, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (5, '27-12-2017', 50.3400, 18.0900, 225, 'Poland ', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (6, '05-06-2011', 46.0000, 30.5050, 346, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (7, '31-03-2005', 42.0900, 12.2397, 471, 'Italy', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (8, '31-03-2011', 51.9800, 32.2400, 100, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (9, '18-09-2018', 49.4400, 21.0400, 850, 'Poland ', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (10, '24-02-2012', 48.3800, 23.1020, 1323, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (11, '14-10-2017', 48.5400, 42.0500, 34, 'France ', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (12, '15-03-2013', 45.9900, 9.5600, 230, 'Italy', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (13, '16-04-2014', 47.6700, 30.0000, 3450, 'Ukraine', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (14, '25-07-2010', 38.0000, 16.0000, 23, 'Italy', DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (15, '04-01-2019', 49.0000, 32.0000, 152, 'Ukraine', DEFAULT, DEFAULT);
+INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (1, '2009-12-10', 49.4656, 24.0455, 340, 'Ukraine', 1, 1);
+INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (2, '2015-12-12', 48.4523, 32.5500, 100, 'Ukraine', 4, 2);
+INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (3, '2019-01-04', 52.8570, 20.8900, 120, 'Poland ', 3, 3);
+INSERT INTO `weather_station`.`station` (`idstation`, `installation_date`, `latitude`, `longtitude`, `height`, `country`, `manufacturer_id`, `interval_idinterval`) VALUES (4, '2016-12-10', 52.4560, 28.0000, 345, 'Ukraine', 4, 3);
 
 COMMIT;
 
@@ -127,18 +116,13 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `weather_station`;
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 09:34:21', 25, 50.9, 745, 'WEST', 12.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2018-06-15 09:34:21', 26, 50.9, 760, 'EAST', 3.5, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 10, 50.9, 745, 'WEST', 3.5, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 23, 50.9, 760.0, 'EAST', 12.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-12 11:34:21', 23, 74.5, 745, 'WEST', 3.5, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 23, 74.5, 720.9, 'EAST', 12.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 09:34:21', 23, 82.0, 745, 'WEST', 5.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-12 11:34:21', 14, 74.5, 720.9, 'NORTH', 12.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-12 11:34:21', 14, 82.0, 745, 'WEST', 5.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 14, 74.582.0, 760.9, 'NORTH', 5.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-14 09:34:21', 14, 82.0, 720.9, 'SOUTH', 5.0, DEFAULT, DEFAULT);
-INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2015-06-14 09:34:21', 15, 82.0, 720.9, 'WEST', 3.5, DEFAULT, DEFAULT);
+INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 09:34:21', 25, 50.9, 745, 'WEST', 12.0, 1, 1);
+INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2018-06-15 09:34:21', 26, 50.9, 760, 'EAST', 3.5, 2, 2);
+INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 10, 50.9, 745, 'WEST', 3.5, 3, 3);
+INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 23, 50.9, 760.0, 'EAST', 12.0, 4, 4);
+INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-12 11:34:21', 23, 74.5, 745, 'WEST', 3.5, 5, 1);
+INSERT INTO `weather_station`.`weather` (`date`, `temperature`, `humidity`, `pressure`, `wind_direction`, `wind_speed`, `id`, `station_idstation`) VALUES ('2017-06-15 10:34:20', 23, 74.5, 720.9, 'EAST', 12.0, 6, 2);
+
 
 COMMIT;
 
@@ -148,16 +132,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `weather_station`;
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (1, '18-09-2018', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (2, '17-09-2018', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (3, '16-09-2018', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (4, '16-10-2017', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (5, '16-10-2017', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (6, '15-10-2017', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (7, '17-10-2017', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (8, '16-10-2016', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (9, '15-10-2016', 'service review', DEFAULT);
-INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (10, '16-10-2017', 'service review', DEFAULT);
+INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (1, '2018-09-18', 'service review', 1);
+INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (2, '2018-05-09', 'service review', 1);
+INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (3, '2018-04-09', 'service review', 2);
+INSERT INTO `weather_station`.`service` (`id`, `date`, `description`, `station_idstation`) VALUES (4, '2017-02-01', 'service review', 4);
+
 
 COMMIT;
 
