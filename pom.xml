@@ -40,8 +40,8 @@
 
 
 
-			<plugin>
-			<groupId>org.codehaus.mojo</groupId>
+	<plugin>
+	<groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2.1</version>
         <executions>
@@ -55,9 +55,27 @@
 				<mainClass>ua.lviv.iot.Application</mainClass>
 			</configuration>
 		</plugin>
-			 
-	
+			
 
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-jar-plugin</artifactId>
+		<version>3.1.1</version>
+		<configuration>
+		  <archive>
+		    <manifest>
+		      <mainClass>ua.lviv.iot.Application</mainClass>
+		    </manifest>
+		  </archive>
+		</configuration>
+	 </plugin> 
+		
+	  
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+  
             
 
         </plugins>
