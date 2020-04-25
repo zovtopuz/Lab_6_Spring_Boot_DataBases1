@@ -3,7 +3,6 @@ WORKDIR /
 VOLUME /tmp
 
 ADD . .
-RUN cd home && ls
 FROM openjdk:11
 
 VOLUME /tmp
