@@ -3,6 +3,9 @@ WORKDIR /
 VOLUME /tmp
 
 ADD . .
+
+RUN mvn clean package
+
 FROM openjdk:11
 
 VOLUME /tmp
